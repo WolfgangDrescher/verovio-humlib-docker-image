@@ -34,6 +34,10 @@ RUN git clone -b verovio-humlib-docker-image https://github.com/WolfgangDrescher
 RUN (cd humlib && make)
 ENV PATH="/usr/local/humlib/bin:${PATH}"
 
+# install emscripten
+RUN git clone https://github.com/emscripten-core/emsdk.git
+RUN (cd emsdk && ./emsdk install latest && ./emsdk activate latest && source ./emsdk_env.sh)
+
 # WolfgangDrescher/verovio
 RUN git clone -b verovio-humlib-docker-image https://github.com/WolfgangDrescher/verovio.git
 RUN cp /usr/local/humlib/include/humlib.h /usr/local/verovio/include/hum/humlib.h && \
