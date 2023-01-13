@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM emscripten/emsdk:latest
 
 LABEL maintainer="drescher.wolfgang@gmail.com"
 
@@ -33,10 +33,6 @@ ENV PATH="/usr/local/humdrum-tools/humdrum/bin:/usr/local/humdrum-tools/humextra
 RUN git clone -b verovio-humlib-docker-image https://github.com/WolfgangDrescher/humlib.git
 RUN (cd humlib && make)
 ENV PATH="/usr/local/humlib/bin:${PATH}"
-
-# install emscripten
-RUN git clone https://github.com/emscripten-core/emsdk.git
-RUN (cd emsdk && ./emsdk install latest && ./emsdk activate latest && source ./emsdk_env.sh)
 
 # WolfgangDrescher/verovio
 RUN git clone -b verovio-humlib-docker-image https://github.com/WolfgangDrescher/verovio.git
