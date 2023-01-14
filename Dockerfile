@@ -17,6 +17,8 @@ RUN apt-get update \
         curl \
         unzip \
         sudo \
+        ssh \
+        rsync \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/local
