@@ -1,8 +1,6 @@
 name: Publish image on ghcr.io
 
 on:
-    schedule:
-        - cron: '0 0 1 * *'
     workflow_dispatch:
 
 jobs:
