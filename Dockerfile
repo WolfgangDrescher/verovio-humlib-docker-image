@@ -19,7 +19,7 @@ RUN apt-get update \
         sudo \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR  /usr/local
+WORKDIR /usr/local
 
 # humdrum-tools/humdrum-tools
 RUN git clone https://github.com/humdrum-tools/humdrum-tools.git
