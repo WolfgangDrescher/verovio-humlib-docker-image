@@ -35,7 +35,7 @@ RUN (cd humlib && make)
 RUN git clone -b verovio-humlib-docker-image https://github.com/WolfgangDrescher/verovio.git
 RUN cp /usr/local/humlib/include/humlib.h /usr/local/verovio/include/hum/humlib.h && \
     cp /usr/local/humlib/src/humlib.cpp /usr/local/verovio/src/hum/humlib.cpp
-RUN (cd verovio/tools && cmake ../cmake && make -j 8 && sudo make install)
+# RUN (cd verovio/tools && cmake ../cmake && make -j 8 && sudo make install)
 RUN (cd verovio/emscripten && ./buildNpmPackage)
 
 
